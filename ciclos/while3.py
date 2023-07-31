@@ -21,7 +21,7 @@ numero1= int(input("ingresar el primer numero"))
 numero2= int(input("ingrese el segundo numero "))
 
 cociente, residuo = obtener_cociente_reciduo(numero1, numero2) # sellama la funcion, con los valores ingresados por el usuario
-                                                               #los valores cociente residuo, que se retornaron en la funcion se asignaron alas variables cociente y residuo       
+                                                            #los valores cociente residuo, que se retornaron en la funcion se asignaron alas variables cociente y residuo       
 
 print("El cociente de", numero1, "entre", numero2, "es:", cociente)
 print("El residuo de", numero1, "entre", numero2, "es:", residuo)

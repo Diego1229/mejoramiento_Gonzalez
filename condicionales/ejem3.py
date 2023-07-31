@@ -8,7 +8,7 @@ def calcular_nota(nota):   # se definela funcion, recibe como parametro 'nota'
    elif nota == 8 or nota == 7:
       return"buena nota "
    elif nota == 6 or nota == 5:
-       return"obtuvo una nota suficiente para pasar"
+      return"obtuvo una nota suficiente para pasar"
    elif nota >10 or nota !=0:
       return "es una nota no valida"   
    

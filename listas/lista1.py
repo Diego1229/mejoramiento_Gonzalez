@@ -1,9 +1,9 @@
 import random # Importar el módulo random para generar números aleatorios
 
 def calcular_lista(): # Definir la función calcular_lista
-   
+
     n = int(input("Ingrese el tamaño de la lista:"))
-   
+
     lista = []  # creamos una lista vasia 
     for i in range(n):
         lista.append(random.randint(1, 100))
@@ -34,8 +34,8 @@ def calcular_lista(): # Definir la función calcular_lista
         posicion = lista.index(numero)  #index buscamos un elemnto expecifico en la lista 
         print("El número", numero, "se encuentra en la posición", posicion, "de la lista.")
     else:
-         # Si el número no está en la lista, mostrar un mensaje indicándolo
+        # Si el número no está en la lista, mostrar un mensaje indicándolo
         print("El número", numero, "no se encuentra en la lista.")
 
 calcular_lista() # Llamar a la función calcular_lista para que se ejecute
- 
+

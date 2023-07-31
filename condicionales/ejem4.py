@@ -7,7 +7,7 @@ ellas ya no se pregunta la siguiente y termina el juego. Las preguntas son:
 """
 def jugar_preguntas():
     num_preguntas = 3 #ponemos una variable con el numero total de preguntas 
-   
+
     aciertos = 0 # aciertos es un contador que almacena la cantidad de acieertos 
 
     for i in range(1, num_preguntas + 1): #creamos un bucle para recorrer las preguntas 

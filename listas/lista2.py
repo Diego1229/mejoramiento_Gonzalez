@@ -7,9 +7,9 @@ def comparar_lista():
 
     n=int(input("ingrese el tamaño de la lista1:")) # El usuario ingresa el tamaño de ambas listas
     y=int(input("ingrese el tamaño de la lista2:"))
-   
+  
     for i in range(n):
-     lista1.append(random.randint(1, 100))  # Generamos números aleatorios y los agregamos a lista1
+      lista1.append(random.randint(1, 100))  # Generamos números aleatorios y los agregamos a lista1
     print("La lista1 original es:", lista1)
     
     for i in range(y):
@@ -31,7 +31,7 @@ def comparar_lista():
     else:
       print("La suma de las dos listas son iguales.")
 
-     
+
 def determinar_mayor_menor(lista1, lista2):
     
     menor_lista1=min(lista1)  # Utilizamos la función min() para encontrar el número menor en lista1 y lo imprimimos
@@ -42,11 +42,3 @@ def determinar_mayor_menor(lista1, lista2):
 
 # Llamamos a la función comparar_lista() para ejecutar el programa y realizar las comparaciones entre las listas generadas aleatoriamente.
 comparar_lista()
-  
-
-
-
-
-
-
-   

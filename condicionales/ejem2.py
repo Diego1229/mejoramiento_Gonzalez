@@ -5,7 +5,7 @@ def cuenta_cifras(numero):
     
     if numero ==0: # Si el número es igual a 0, tiene una sola cifra, así que retornamos 1
         return 1
-   
+
     contador=0 #inicializamos la variable en 0 para contar las cifras  
     
     while numero >0: # mientras que el numero sea mayor que =
