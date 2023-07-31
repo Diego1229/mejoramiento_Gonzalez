@@ -1,25 +1,44 @@
-"""hacer un programa que le pida el salario a un profesor , calcule el  """
-"""incremento del salario de acuerdo con los siguientes criterios y escriba el nuevo salario del profesor """
+"""En un juego de preguntas a las que se responde “Si” o “No” gana quien
+responda correctamente las tres preguntas. Si se responde mal a cualquiera de
+ellas ya no se pregunta la siguiente y termina el juego. Las preguntas son:
+1. Colon descubrió América?
+2. La independencia de Colombia fue en el año 1810?
+3. The Doors fue un grupo de rock Americano?
+"""
+def jugar_preguntas():
+    num_preguntas = 3 #ponemos una variable con el numero total de preguntas 
+   
+    aciertos = 0 # aciertos es un contador que almacena la cantidad de acieertos 
 
-#salario < 18.000 => incremento 12%
-#$18,000 <= salario <= $30,000 => incremento 8%.
-#$30,000 < salario <- $50,000 => incremento 7%.
-#$50,000 < salario => incremento 6%.
+    for i in range(1, num_preguntas + 1): #creamos un bucle para recorrer las preguntas 
+        print("Pregunta", i)  #se imprime el numero de preguntas actuales
 
+        if i == 1:  #se configura las respuestas para cada valor de i
+            
+            pregunta = "¿Colón descubrió América?"
+            respuesta = "si"
+        elif i == 2:
+            pregunta = "¿La independencia de Colombia fue en el año 1810?"  
+            respuesta = "si"
+        elif i == 3:
+            pregunta = "¿The Doors fue un grupo de rock americano?"
+            respuesta = "si"
 
-salario = float(input("ingrese el salario pofesor: "))
-if salario < 18.000:
-    salario += (salario * 0.12)
-    print(f"el nuevo salario del profesor es{salario}")
+        print(pregunta) #imprimimos la pregunta actual
+        respuesta_usuario = input("Tu respuesta: ").lower()
 
-elif 18.000 <= salario <= 30.000 :
-    salario += (salario * 0.08)
-    print(f"el nuevo salario del profesor es{salario}")
+        if respuesta_usuario == "si" or respuesta_usuario == "no": # # Verificar si la respuesta es "si" o "no"
+            if respuesta_usuario == respuesta: #  Comprobar si la respuesta del usuario es correcta
+                print("¡Respuesta correcta!")
+                aciertos += 1
+            else:
+                print("Respuesta incorrecta.")
+        else:
+            print("Respuesta inválida. Por favor, responde 'sí' o 'no.'")
+        print()
 
-elif 30.000 < salario <= 50.000:
-    salario += (salario * 0.07) 
-    print(f"el nuevo salario del profesor es{salario}")
+    # Imprimir un mensaje al final del juego con la cantidad de aciertos
+    print("Juego terminado.")
+    print("Has acertado", aciertos, "preguntas de", num_preguntas, "preguntas.")
 
-else:
-    salario += (salario * 0.06)
-    print(f"el nuevo salario del profesor es{salario}")
+jugar_preguntas()# Llamar a la función para iniciar el juego de preguntas

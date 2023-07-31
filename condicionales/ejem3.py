@@ -1,24 +1,22 @@
-# hacer un programa que pida 3 numeros y determinar cual es mayor
-valido = False
+"""Pedir una nota de 0 a 10 y mostrarla de la forma: Insuficiente, Suficiente, Bien,
+etc. Use la escala que prefiera, pero cerciórese que tiene 5 valores"""
 
-while not valido:
-    try:
-        num1 = int(input("Ingrese el primer número: "))
-        num2 = int(input("Ingrese el segundo número: "))
-        num3 = int(input("Ingrese el tercer número: "))
+def calcular_nota(nota):   # se definela funcion, recibe como parametro 'nota'
+   
+   if nota == 10 or nota ==9:         #comprobar la nota para teterminar el mendaje apropiado       
+      return"felicitacines exelente nota"
+   elif nota == 8 or nota == 7:
+      return"buena nota "
+   elif nota == 6 or nota == 5:
+       return"obtuvo una nota suficiente para pasar"
+   elif nota >10 or nota !=0:
+      return "es una nota no valida"   
+   
+   else:
+      return"usted perdio el trimestre"   
 
-        if num1 >= num2 and num1 >= num3:
-            print(f"El número mayor es {num1}")
-            valido = True
-        elif num2 >= num1 and num2 >= num3:
-            print(f"El número mayor es {num2}")
-            valido = True
-        elif num3 >= num1 and num3 >= num2:
-            print(f"El número mayor es {num3}")
-            valido = True
-        else:
-            print("Ingrese números válidos. Intente nuevamente.")
-    except ValueError:
-        print("Ingrese números válidos. Intente nuevamente.")
+nota=int(input("ingrese su nota: ")) #la nota la proporciona el usuario
 
-print("¡Gracias por utilizar el programa!")
+mensaje= calcular_nota(nota) #se llama la funcio calcular nota con el valor 'nota' y se guarda el resultado en la variable 'mensaje'
+
+print(mensaje ) # se imprime mensaje resultante  

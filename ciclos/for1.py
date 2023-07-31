@@ -1,35 +1,30 @@
-# construir un programa que, al recibir como dato N numeros naturales, determine
-#cunato de ellos son positivos, negativos o nulos 
-
-#si el usuario escribe un numero incorrecto, el programa no se ejecuta.
-#se debe preguntar denuevo por la informacion hasta que el dato ingresado sea correcto.
-comprobar = True
-while comprobar == True:
-
-   N = int(input("ingrese la cantidad de datos que se desea procesar: "))
-
-
-   if N > 0:
-        comprobar= 0
-        positivo= 0
-        negativo= 0
-        nulos=0
+"""Determinar si un número es o no es perfecto. Un numero es
+perfecto si la suma de sus divisores sin incluir el propio
+número es igual a este """
     
-        for i in range (N):
-            dato= int(input("ingrese el numero natural: "))
+def NumPerfecto(numero):   
     
-            if dato > 0:
-                positivo += 1
+    suma=0                 # se crea una variable para almacenar la suma de los divisores propios del numero 
+   
+    for i in range(1, numero):  # se utiliza para generar una secuencia de numeros que se utiliza como valores de i en el bucle, para verificar los divisores propios
+      
+        if (numero % i ==0):  # se realiza una division entre (numero) e (i), si al dividirlos no da ningun reciduo es numero perfecto
+            suma+=i
+   
+    if numero == suma: #si es igual el numero es perfecto
+        return True
+    else:
+        return False
+        
+try:  
+    numero= int(input("introduzca un numero: ")) # se llama la funcion numPerfecto con el numero ingresado
 
-            elif dato < 0: 
-                negativo += 1  
+    perfecto=NumPerfecto(numero)
+    if perfecto ==True:
+      print("es un numero perfecto")
+    else:
+        print("no es un numero perfecto") 
 
-            else:
-                 nulos += 1     
-
-        print("La cantidad de numeros positivos fue", positivo,
-             "\nLa cantidad de numeros negarivos fue",negativo,
-             "\nLa cantidad de numeros nulos fueron",nulos )            
-
-   else:
-    print("El numero que ha ingresado no es correcto. Intentelo nuevamente.")
+except ValueError:
+    print("el caracter ingresado no es un numero ")
+    print("vuelva a intentarlo")

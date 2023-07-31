@@ -1,19 +1,22 @@
-# Calcular la suma de todos los numeros enteros ingresados,
-# la suma de los pares y la suma de los impares
 
-cantidad= int(input("ingresar la cantidad de numeros: "))
-sum=0
-par=0
-impar=0
+"""2. Determinar si un numero es o no es primo"""
 
-for i in range (1, cantidad + 1):
-    num= int(input("dijite los numeros"))
-    sum  = sum+ num
-    if num% 2 == 0:
-        par= par + num
-    else:
-        impar= impar + num
+def numero_primo(num): # se define la funcion, que toma un argumento(num) el que sera el numero a verificar
+     
+    if num < 2:    # se verifica si el numero es manor que 2, ya que los numeros primos son mayores o iguales a 2
+        return False     # si enumero es menor que dos se retorna false
+    
+    for i in range(2,num): #entramos en un bucle 'for' que itera desde 2 hasta 'num - 1'.
+       
+        if num % i == 0:   # se verifica si el número 'num' es divisible por 'i', es decir, si el resto de 'num' dividido por 'i' es igual a 0.
+            return False   # Si el número es divisible por algún valor de 'i', entonces no es primo y retornamos 'False'.
+    
+    return True # # Si el bucle completa todas las iteraciones sin encontrar un divisor, entonces 'num' es primo y retornamos 'True'.
+    
+numero= int(input("ingrese un numero: "))
 
-print("la suma de todos los numeros es", sum)
-print("la suma de los numeros pares", par)
-print("la suma de los numeros impares", impar)
+if numero_primo(numero): ## Llamamos a la función 'numero_primo(numero)' para determinar si el número ingresado es primo o no.
+    
+    print(f"{numero} es un numero primo. ")
+else:
+    print(f"{numero} no es un numero primo. ")    
